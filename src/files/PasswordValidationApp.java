@@ -12,9 +12,6 @@ public class PasswordValidationApp {
         String filename = "//Users//vivianacano//Documents//JavaTraining//PasswordValidation.txt";
         File file = new File(filename);
         String[] passwords = new String[13];
-        String letterExpression = ".*[a-zA-Z].*";
-        String characterSpecialExpression = ".*[!@#].*";
-        String numberExpression = ".*[0-9].*";
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -37,13 +34,13 @@ public class PasswordValidationApp {
         for (n = 0; n < passwords.length; n++) {
             try {
 
-                if (!passwords[n].matches(numberExpression)) {
+                if (!passwords[n].matches(.*[0-9].*)) {
                     throw new NumberException(passwords[n]);
                 }
-                if (!passwords[n].matches(letterExpression)) {
+                if (!passwords[n].matches(".*[a-zA-Z].*")) {
                     throw new LetterException(passwords[n]);
                 }
-                if (!passwords[n].matches(characterSpecialExpression)) {
+                if (!passwords[n].matches(".*[!@#].*")) {
                     throw new CharacterException(passwords[n]);
                 }
 
