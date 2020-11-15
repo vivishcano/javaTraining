@@ -34,7 +34,7 @@ public class PasswordValidationApp {
         for (n = 0; n < passwords.length; n++) {
             try {
 
-                if (!passwords[n].matches(.*[0-9].*)) {
+                if (!passwords[n].matches(".*[0-9].*")) {
                     throw new NumberException(passwords[n]);
                 }
                 if (!passwords[n].matches(".*[a-zA-Z].*")) {
